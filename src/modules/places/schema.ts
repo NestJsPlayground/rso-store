@@ -9,6 +9,8 @@ export const EntrySchema = new mongoose.Schema({
   lat         : Schema.Types.Number,
   lon         : Schema.Types.Number,
 
+  electricity : Schema.Types.Boolean,
+
   rawIndex    : Schema.Types.Mixed
 });
 

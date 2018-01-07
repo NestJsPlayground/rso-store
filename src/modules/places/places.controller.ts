@@ -14,6 +14,9 @@ export class PlacesData {
   name        : string;
 
   @ApiModelProperty()
+  electricity : boolean;
+
+  @ApiModelProperty()
   lat         : number;
   @ApiModelProperty()
   lon         : number;
