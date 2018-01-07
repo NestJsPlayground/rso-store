@@ -38,16 +38,22 @@ export class PlacesController {
     return await this.entryModel.find().lean();
   }
 
-  @Get(':id')
-  @ApiResponse({ status: 200, description: `Get place by id`})
-  async get(@Param() params): Promise<any> {
-    return await this.entryModel.findById(params.id).lean();
-  }
-
   @Get('pending')
   @ApiResponse({ status: 200, description: `Get pending places (limit 10)`})
-  async pending(@Param('id') id: string): Promise<any> {
+  async pending(): Promise<any> {
+    return await this.entryModel.find().lean();
+  }
+
+  @Get(':id')
+  @ApiResponse({ status: 200, description: `Get place by id`})
+  async get(@Param('id') id: string): Promise<any> {
     return await this.entryModel.findById(id).lean();
+  }
+
+  @Get('find/fid/:fid')
+  @ApiResponse({ status: 200, description: `Get place by id`})
+  async find(@Param('fid') fid: string): Promise<any> {
+    return await this.entryModel.find({ fid }).lean();
   }
 
   @Post()

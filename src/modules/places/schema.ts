@@ -1,12 +1,13 @@
 import * as mongoose from 'mongoose';
 import { Schema } from 'mongoose';
+import { Double } from 'bson';
 
 export const EntrySchema = new mongoose.Schema({
-  fid         : String,
-  name        : String,
+  fid         : Schema.Types.String,
+  name        : Schema.Types.String,
 
-  lat         : Number,
-  lon         : Number,
+  lat         : Schema.Types.Number,
+  lon         : Schema.Types.Number,
 
   rawIndex    : Schema.Types.Mixed
 });
